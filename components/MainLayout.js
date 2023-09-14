@@ -1,4 +1,4 @@
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, useWindowDimensions } from 'react-native';
 import Box from './Box';
 import DailyLiturgy from '../screens/DailyLiturgy';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -6,21 +6,29 @@ import { NavigationContainer } from '@react-navigation/native'
 
 export default function MainLayout ({ navigation }) {
 
+  const windowWidth = useWindowDimensions().width;
+  const windowHeight = useWindowDimensions().height
 
+  const containerStyle = {
+    flexDirection: windowWidth > windowHeight ? 'column' : 'row',
+  };
 
+  const containerItemsStyle = {
+    flexDirection: windowWidth > windowHeight ? 'row' : 'column',
+  };
 
   return (
-    <View style={[styles.container]}>
-      <View style={[styles.containerItems]}>
-        <Box style={{ backgroundColor: '#8e9bcc' }} onPress={() => navigation.push('Liturgia Diária')}>Liturgia Diária</Box>
-        <Box style={{ backgroundColor: '#8e9bcc' }}  >Santo do Dia</Box>
-        <Box style={{ backgroundColor: '#8e9bcc' }}>Músicas</Box>
+    <View style={[styles.container, containerStyle]}>
+      <View style={[styles.containerItems, containerItemsStyle]}>
+        <Box style={[{ backgroundColor: '#80ed99' }]} onPress={() => navigation.push('Liturgia Diária')}>Liturgia Diária</Box>
+        <Box style={{ backgroundColor: '#bde0fe' }}  >Santo do Dia</Box>
+        <Box style={{ backgroundColor: '#a2d2ff' }}>Músicas</Box>
       </View>
 
-      <View style={[styles.containerItems]}>
-        <Box style={{ backgroundColor: '#8e9bcc' }}>Orações</Box>
-        <Box style={{ backgroundColor: '#8e9bcc' }}>Nos ajude</Box>
-        <Box style={{ backgroundColor: 'lightgreen' }}>Produtos católicos</Box>
+      <View style={[styles.containerItems, containerItemsStyle]}>
+        <Box style={{ backgroundColor: '#bde0fe' }}>Orações</Box>
+        <Box style={{ backgroundColor: '#a2d2ff' }}>Nos ajude</Box>
+        <Box style={{ backgroundColor: '#80ed99' }}>Produtos católicos</Box>
 
       </View>
 
@@ -29,19 +37,24 @@ export default function MainLayout ({ navigation }) {
 }
 
 const styles = StyleSheet.create({
+
+
+
   container: {
-    //flex: 1,
-    height: 600,
+    flex: 1,
+    //height: 
     flexWrap: 'wrap',
     justifyContent: 'center',
     alignContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',
     gap: 10,
+    borderWidth: 4,
+    borderColor: 'red',
+    backgroundColor: 'white'
+
   },
   containerItems: {
     gap: 10,
-
-
   }
 })

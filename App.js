@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
+import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native'
 import Box from './components/Box';
@@ -8,22 +8,24 @@ import Box from './components/Box';
 import Home from './screens/Home';
 import DailyLiturgy from './screens/DailyLiturgy';
 import MainLayout from './components/MainLayout';
+// import { ScrollView } from 'react-native-gesture-handler';
 
 export default function App () {
 
   const Stack = createNativeStackNavigator();
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaProvider style={styles.container}>
       <NavigationContainer>
         <Stack.Navigator initialRouteName='Home'>
           <Stack.Screen
-            name='Home'
+            name='LITURGIA DIÁRIA'
             component={MainLayout}
             options={{
-              title: 'Bem vindo!',
+              title: 'LITURGIA DIÁRIA',
               headerStyle: {
-                backgroundColor: 'lightgreen'
+                backgroundColor: '#a2d2ff',
+                height: 30,
               },
               headerTintColor: '#000',
               headerTitleStyle: {
@@ -36,13 +38,14 @@ export default function App () {
         </Stack.Navigator>
 
       </NavigationContainer>
-    </SafeAreaView >
+    </SafeAreaProvider >
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+
   },
   containerMenu: {
     //flex: 1,
