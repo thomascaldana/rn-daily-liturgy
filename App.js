@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native'
+import Box from './components/Box';
 
 import Home from './screens/Home';
 import DailyLiturgy from './screens/DailyLiturgy';
@@ -18,7 +19,7 @@ export default function App () {
         <Stack.Navigator initialRouteName='Home'>
           <Stack.Screen
             name='Home'
-            component={Home}
+            component={MainLayout}
             options={{
               title: 'Bem vindo!',
               headerStyle: {
@@ -30,11 +31,12 @@ export default function App () {
               },
             }}
           />
+
           <Stack.Screen name='Liturgia Diária' component={DailyLiturgy} />
         </Stack.Navigator>
-        <MainLayout />
+
       </NavigationContainer>
-    </SafeAreaView>
+    </SafeAreaView >
   );
 }
 
@@ -42,4 +44,18 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+  containerMenu: {
+    //flex: 1,
+    height: 600,
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    alignContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
+    gap: 10,
+
+  },
+  containerItems: {
+    gap: 20
+  }
 });

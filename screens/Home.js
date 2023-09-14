@@ -9,7 +9,7 @@ export default function Home ({ navigation }) {
       <Text>Welcome to Home page!</Text>
       <StatusBar style="auto" />
       <Button
-        title='Go to DailyLiturgy'
+        title='Go to Daily Liturgy'
         onPress={() => navigation.push('Liturgia Diária')}
       />
     </View>
@@ -23,4 +23,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+
 });

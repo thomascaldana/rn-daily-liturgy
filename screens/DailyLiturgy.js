@@ -1,12 +1,13 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, Text, Button, StyleSheet } from 'react-native';
 
 export default function DailyLiturgy ({ navigation }) {
+
+
+
   return (
     <View style={styles.container}>
       <Text>Daily Liturgy page</Text>
-      <StatusBar style="auto" />
-      <Button title='Go back to Home' onPress={() => navigation.goBack()} />
     </View>
   );
 }
@@ -16,6 +17,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
+    paddingTop: 24
   },
 });

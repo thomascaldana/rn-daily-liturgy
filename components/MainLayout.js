@@ -1,7 +1,10 @@
 import { StyleSheet, View } from 'react-native';
 import Box from './Box';
+import DailyLiturgy from '../screens/DailyLiturgy';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NavigationContainer } from '@react-navigation/native'
 
-export default function MainLayout () {
+export default function MainLayout ({ navigation }) {
 
 
 
@@ -9,7 +12,7 @@ export default function MainLayout () {
   return (
     <View style={[styles.container]}>
       <View style={[styles.containerItems]}>
-        <Box style={{ backgroundColor: '#8e9bcc' }}>Liturgia Diária</Box>
+        <Box style={{ backgroundColor: '#8e9bcc' }} onPress={() => navigation.push('Liturgia Diária')}>Liturgia Diária</Box>
         <Box style={{ backgroundColor: '#8e9bcc' }}  >Santo do Dia</Box>
         <Box style={{ backgroundColor: '#8e9bcc' }}>Músicas</Box>
       </View>
@@ -35,10 +38,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row',
     gap: 10,
-    borderWidth: 6,
-    borderColor: 'red'
   },
   containerItems: {
-    gap: 20
+    gap: 10,
+
+
   }
 })
