@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-
-import { View, StyleSheet, Dimensions, StatusBar, Text } from 'react-native';
+import { View, StyleSheet, Dimensions, StatusBar, Text, TouchableOpacity } from 'react-native';
 import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
 import YoutubeIframePlayer from 'react-native-youtube-iframe-player';
+
 
 const FirstRoute = () => (
   <View style={[styles.scene, { backgroundColor: '#ffffff' }]}>
@@ -16,17 +16,35 @@ const SecondRoute = () => (
   </View>
 );
 
-const ThirdRoute = () => (
-  <View style={[styles.scene, { backgroundColor: '#ffffff' }]}>
-    <YoutubeIframePlayer
-      videoUrl='https://www.youtube.com/watch?v=f7OPcDX_LyI&t=3s'
-      height={210}
-      width='90%'
-      locale='km'
-      durationFontSize={15}
-    />
-  </View>
-);
+const ThirdRoute = () => {
+  const [playing, setPlaying] = useState(false);
+
+  const toggleVideo = () => {
+    setPlaying(!playing);
+  };
+
+  return (
+    <View style={[styles.scene, { backgroundColor: '#ffffff' }]}>
+      <TouchableOpacity onPress={toggleVideo}>
+        {playing ? (
+          <YoutubeIframePlayer
+            videoUrl='https://www.youtube.com/watch?v=ymuHNEBDMVo'
+            height={210}
+            width='90%'
+            locale='km'
+            durationFontSize={15}
+            play={playing} // Control the play state of the video
+          />
+        ) : (
+          <Text>Click to Play</Text>
+        )}
+      </TouchableOpacity>
+    </View>
+  );
+};
+
+
+
 /* const FourthRoute = () => (
   <View style={[styles.scene, { backgroundColor: '#ffffff' }]}>
     <Text>Evangelho do dia</Text>
