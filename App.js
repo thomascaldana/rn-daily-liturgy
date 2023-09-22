@@ -3,9 +3,9 @@ import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native'
-import Home from './screens/Home'
+
 import DailyLiturgy from './screens/DailyLiturgy';
-import MainLayout from './components/HomeComponents/MainLayout';
+import Home from './screens/Home';
 // import { ScrollView } from 'react-native-gesture-handler';
 
 export default function App () {
@@ -18,7 +18,7 @@ export default function App () {
         <Stack.Navigator initialRouteName='Home'>
           <Stack.Screen
             name='LITURGIA DIÁRIA'
-            component={MainLayout}
+            component={Home}
             options={{
               title: 'LITURGIA DIÁRIA',
               headerStyle: {
