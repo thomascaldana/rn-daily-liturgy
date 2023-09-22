@@ -3,9 +3,9 @@ import { View, Dimensions, StatusBar } from 'react-native';
 import { TabView, TabBar } from 'react-native-tab-view';
 import FirstRoute from '../components/DailyLiturgyComponents/FirstRoute';
 import SecondRoute from '../components/DailyLiturgyComponents/SecondRoute';
-import ThirdRoute from '../components/DailyLiturgyComponents/SecondRoute';
+import ThirdRoute from '../components/DailyLiturgyComponents/ThirdRoute';
 
-class TabViewExample extends React.Component {
+class TabViewClass extends React.Component {
   state = {
     index: 0,
     routes: [
@@ -50,4 +50,4 @@ class TabViewExample extends React.Component {
   }
 }
 
-export default TabViewExample;
+export default TabViewClass;

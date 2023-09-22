@@ -1,17 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import DailyLiturgy from './DailyLiturgy';
+import MainLayout from '../components/HomeComponents/MainLayout';
 
 
 export default function Home ({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text>Welcome to Home page!</Text>
-      <StatusBar style="auto" />
-      <Button
-        title='Go to Daily Liturgy'
-        onPress={() => navigation.push('Liturgia Diária')}
-      />
+      <MainLayout />
     </View>
   );
 }

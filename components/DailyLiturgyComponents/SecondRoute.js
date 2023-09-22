@@ -4,7 +4,7 @@ import { View, Text, StyleSheet } from 'react-native';
 
 const SecondRoute = () => (
   <View style={[styles.scene, { backgroundColor: '#ffffff' }]}>
-    <Text>Evangelho do dia</Text>
+    <Text>Evangelho do dia ssssssssss</Text>
   </View>
 );
 

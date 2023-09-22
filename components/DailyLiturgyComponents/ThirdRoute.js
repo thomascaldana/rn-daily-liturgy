@@ -1,4 +1,3 @@
-// ThirdRoute.js
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import YoutubeIframePlayer from 'react-native-youtube-iframe-player';

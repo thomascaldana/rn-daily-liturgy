@@ -3,11 +3,9 @@ import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native'
-import Box from './components/Box';
-
-import Home from './screens/Home';
+import Home from './screens/Home'
 import DailyLiturgy from './screens/DailyLiturgy';
-import MainLayout from './components/MainLayout';
+import MainLayout from './components/HomeComponents/MainLayout';
 // import { ScrollView } from 'react-native-gesture-handler';
 
 export default function App () {
