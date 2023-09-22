@@ -1,8 +1,6 @@
 import { StyleSheet, View, useWindowDimensions } from 'react-native';
 import Box from './Box';
-import DailyLiturgy from '../screens/DailyLiturgy';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { NavigationContainer } from '@react-navigation/native'
+
 
 export default function MainLayout ({ navigation }) {
 
