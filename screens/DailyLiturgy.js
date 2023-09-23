@@ -9,17 +9,17 @@ class TabViewClass extends React.Component {
   state = {
     index: 0,
     routes: [
-      { key: 'leituraSalmos', title: 'Leituras e Salmos' },
-      { key: 'status', title: 'Evangelho' },
-      { key: 'evangelho', title: 'Homilía' },
+      { key: 'leitura', title: 'Leituras' },
+      { key: 'salmos', title: 'Salmos' },
+      { key: 'evangelho', title: 'Evangelho' },
     ],
   };
 
   renderScene = ({ route }) => {
     switch (route.key) {
-      case 'leituraSalmos':
+      case 'leitura':
         return <FirstRoute />;
-      case 'status':
+      case 'salmos':
         return <SecondRoute />;
       case 'evangelho':
         return <ThirdRoute />;

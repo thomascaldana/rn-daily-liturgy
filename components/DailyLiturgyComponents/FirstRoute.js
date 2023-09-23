@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, ActivityIndicator } from 'react-native';
+import { View, Text, StyleSheet, ActivityIndicator, ScrollView } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import fetchData from '../../services/api';
 
@@ -23,10 +23,13 @@ const FirstRoute = () => {
     <View>
       {data ? (
         <View style={[styles.container]}>
-          <Text style={[styles.text]} >{data.data}</Text>
-          <Text style={[styles.text]} >{data.primeiraLeitura.referencia}</Text>
-          <Text style={[styles.text]} >{data.primeiraLeitura.titulo}</Text>
-          <Text style={[styles.text]} >{data.primeiraLeitura.texto}</Text>
+          <ScrollView>
+            <Text style={[styles.text]} >{data.data}</Text>
+            <Text style={[styles.text]} >{data.primeiraLeitura.referencia}</Text>
+            <Text style={[styles.text]} >{data.primeiraLeitura.titulo}</Text>
+            <Text style={[styles.text]} >{data.primeiraLeitura.texto}</Text>
+            <Text style={[styles.text]} >{data.segundaLeitura}</Text>
+          </ScrollView>
         </View>
       ) : (
         <>

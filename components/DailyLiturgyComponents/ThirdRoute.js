@@ -1,29 +1,61 @@
-import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, ActivityIndicator, ScrollView } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import fetchData from '../../services/api';
 
 const ThirdRoute = () => {
-  const [playing, setPlaying] = useState(false);
+  const [data, setData] = useState(null);
 
-  const toggleVideo = () => {
-    setPlaying(!playing);
-  };
+  useEffect(() => {
+    const fetchDataAndUse = async () => {
+      try {
+        const fetchedData = await fetchData();
 
+        setData(fetchedData);
+        console.log(data)
+      } catch (error) {
+        console.log('Data not found or an error occurred.');
+      }
+    };
+
+    fetchDataAndUse();
+  }, []);
+  console.log(data)
   return (
-    <View style={[styles.scene, { backgroundColor: '#ffffff' }]}>
-      <TouchableOpacity onPress={toggleVideo}>
+    <View>
+      {data ? (
+        <View style={[styles.container]}>
+          <ScrollView>
+            <Text style={[styles.text]} >{data.data}</Text>
+            <Text style={[styles.text]} >{data.evangelho.referencia}</Text>
+            <Text style={[styles.text]} >{data.evangelho.titulo}</Text>
+            <Text style={[styles.text]} >{data.evangelho.texto}</Text>
+          </ScrollView>
+        </View>
+      ) : (
+        <>
+          <Text>Loading data...</Text>
+          <ActivityIndicator size="large" color="blue" />
 
-        <Text>Click to Play</Text>
-
-      </TouchableOpacity>
+        </>
+      )}
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  container: {
+    padding: 15,
+  },
   scene: {
     flex: 1,
     textAlign: 'center'
   },
+  text: {
+    fontSize: 20,
+    textAlign: 'justify',
+    marginBottom: 20
+
+  }
 });
 
 export default ThirdRoute;

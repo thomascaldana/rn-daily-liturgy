@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, ActivityIndicator } from 'react-native';
+import { View, Text, StyleSheet, ActivityIndicator, ScrollView } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import fetchData from '../../services/api';
 
@@ -18,15 +18,18 @@ const SecondRoute = () => {
 
     fetchDataAndUse();
   }, []);
-
+  console.log(data)
   return (
     <View>
       {data ? (
         <View style={[styles.container]}>
-          <Text style={[styles.text]} >{data.data}</Text>
-          <Text style={[styles.text]} >{data.evangelho.referencia}</Text>
-          <Text style={[styles.text]} >{data.evangelho.titulo}</Text>
-          <Text style={[styles.text]} >{data.evangelho.texto}</Text>
+          <ScrollView>
+            <Text style={[styles.text]} >{data.data}</Text>
+            <Text style={[styles.text]} >{data.salmo.referencia}</Text>
+            <Text style={[styles.text]} >{data.salmo.refrao}</Text>
+            <Text style={[styles.text]} >{data.salmo.texto}</Text>
+          </ScrollView>
+
         </View>
       ) : (
         <>
