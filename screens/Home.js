@@ -24,7 +24,7 @@ export default function Home ({ navigation }) {
       </View>
 
       <View style={[styles.containerItems, containerItemsStyle]}>
-        <Box style={{ backgroundColor: '#bde0fe' }}>Orações</Box>
+        <Box style={{ backgroundColor: '#bde0fe' }} onPress={() => navigation.push('PrayersComponent')} >Orações</Box>
         <Box style={{ backgroundColor: '#a2d2ff' }}>Nos ajude</Box>
         <Box style={{ backgroundColor: '#80ed99' }}>Produtos católicos</Box>
 

@@ -18,7 +18,6 @@ const SecondRoute = () => {
 
     fetchDataAndUse();
   }, []);
-  console.log(data)
   return (
     <View>
       {data ? (

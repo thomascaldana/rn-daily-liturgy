@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet, ActivityIndicator, ScrollView } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import fetchData from '../../services/api';
+import Prayers from '../../Prayers.json'
 
 const ThirdRoute = () => {
   const [data, setData] = useState(null);
@@ -11,7 +12,6 @@ const ThirdRoute = () => {
         const fetchedData = await fetchData();
 
         setData(fetchedData);
-        console.log(data)
       } catch (error) {
         console.log('Data not found or an error occurred.');
       }
@@ -19,7 +19,6 @@ const ThirdRoute = () => {
 
     fetchDataAndUse();
   }, []);
-  console.log(data)
   return (
     <View>
       {data ? (
@@ -29,6 +28,10 @@ const ThirdRoute = () => {
             <Text style={[styles.text]} >{data.evangelho.referencia}</Text>
             <Text style={[styles.text]} >{data.evangelho.titulo}</Text>
             <Text style={[styles.text]} >{data.evangelho.texto}</Text>
+            <View>
+              <Text> {Prayers.saoMiguel} </Text>
+              <Text> {Prayers.providenciaSantissima} </Text>
+            </View>
           </ScrollView>
         </View>
       ) : (
@@ -38,6 +41,7 @@ const ThirdRoute = () => {
 
         </>
       )}
+
     </View>
   );
 };
