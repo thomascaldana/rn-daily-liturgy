@@ -40,7 +40,7 @@ export default function App () {
             name='PrayersComponent'
             component={PrayersComponent}
             options={{
-              title: 'ORAÇÕES',
+              title: 'Orações 🙏🏼',
               headerStyle: {
                 backgroundColor: '#a2d2ff',
                 height: 30,
