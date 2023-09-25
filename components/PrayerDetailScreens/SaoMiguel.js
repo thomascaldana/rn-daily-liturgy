@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Prayers from '../../Prayers.json'
+import styles from './Styles';
 
 const SaoMiguel = ({ route }) => {
 
@@ -24,47 +25,5 @@ const SaoMiguel = ({ route }) => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#dedede',
-    justifyContent: 'flex-start',
-    alignItems: 'center',
-    paddingHorizontal: 10
-
-  },
-  header: {
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-    width: '100%',
-  },
-  closeButton: {
-    padding: 10,
-    position: 'absolute',
-    right: -15,
-    top: -20,
-    width: 80,
-
-  },
-  closeButtonText: {
-    fontSize: 60,
-    fontWeight: 'bold',
-    textAlign: 'center'
-  },
-  paddingTopStyles: {
-    paddingTop: 25,
-  },
-  text: {
-    fontSize: 20,
-    textAlign: 'justify'
-  },
-  boldStyle: {
-    fontWeight: 'bold'
-
-  }
-
-});
 
 export default SaoMiguel;
