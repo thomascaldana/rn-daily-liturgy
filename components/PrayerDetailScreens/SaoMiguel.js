@@ -4,7 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 import Prayers from '../../Prayers.json'
 
 const SaoMiguel = ({ route }) => {
-  const { additionalInfo } = route.params;
+
   const navigation = useNavigation();
 
   const handleClose = () => {
@@ -21,7 +21,6 @@ const SaoMiguel = ({ route }) => {
       </View>
       <Text style={[styles.text, styles.boldStyle]}>Oração de São Miguel</Text>
       <Text style={[styles.paddingTopStyles, styles.text]}>{Prayers.saoMiguel}</Text>
-      <Text>{additionalInfo}</Text>
     </View>
   );
 };

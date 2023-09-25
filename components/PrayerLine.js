@@ -2,12 +2,12 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Platform } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-const PrayerLine = ({ children, additionalInfo }) => {
+const PrayerLine = ({ children }) => {
   const navigation = useNavigation();
 
   const handlePress = () => {
     // Navigate to the details screen with additionalInfo
-    navigation.navigate('PrayerDetails', { additionalInfo });
+    navigation.navigate('PrayerDetails');
   };
 
   return (
