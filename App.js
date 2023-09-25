@@ -7,12 +7,14 @@ import { NavigationContainer } from '@react-navigation/native'
 import DailyLiturgy from './screens/DailyLiturgy';
 import Home from './screens/Home';
 import PrayersComponent from './screens/Prayers';
+import Chaplets from './screens/Chaplets'
 // import { ScrollView } from 'react-native-gesture-handler';
 
 export default function App () {
 
   const Stack = createNativeStackNavigator();
   const Stack2 = createNativeStackNavigator();
+  const Stack3 = createNativeStackNavigator();
 
   return (
     <SafeAreaProvider style={styles.container}>
@@ -52,6 +54,24 @@ export default function App () {
             }}
           />
           <Stack2.Screen name='orações' component={PrayersComponent} />
+
+
+          <Stack3.Screen
+            name='Chaplets'
+            component={Chaplets}
+            options={{
+              title: 'Terços 🙏🏼',
+              headerStyle: {
+                backgroundColor: '#a2d2ff',
+                height: 30,
+              },
+              headerTintColor: '#000',
+              headerTitleStyle: {
+                fontWeight: 'bold'
+              },
+            }}
+          />
+          <Stack3.Screen name='tercos' component={Chaplets} />
 
         </Stack.Navigator>
 

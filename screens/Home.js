@@ -19,13 +19,13 @@ export default function Home ({ navigation }) {
     <View style={[styles.container, containerStyle]}>
       <View style={[styles.containerItems, containerItemsStyle]}>
         <Box style={[{ backgroundColor: '#80ed99' }]} onPress={() => navigation.push('Liturgia Diária')}>Liturgia Diária</Box>
-        <Box style={{ backgroundColor: '#bde0fe' }}  >Santo do Dia</Box>
-        <Box style={{ backgroundColor: '#a2d2ff' }}>Músicas</Box>
+        <Box style={{ backgroundColor: '#bde0fe' }} onPress={() => navigation.push('Chaplets')}>Terços</Box>
+        <Box style={{ backgroundColor: '#a2d2ff' }}>Nos ajude</Box>
       </View>
 
       <View style={[styles.containerItems, containerItemsStyle]}>
         <Box style={{ backgroundColor: '#bde0fe' }} onPress={() => navigation.push('PrayersComponent')} >Orações</Box>
-        <Box style={{ backgroundColor: '#a2d2ff' }}>Nos ajude</Box>
+        <Box style={{ backgroundColor: '#a2d2ff' }}>Novenas</Box>
         <Box style={{ backgroundColor: '#80ed99' }}>Produtos católicos</Box>
 
       </View>
