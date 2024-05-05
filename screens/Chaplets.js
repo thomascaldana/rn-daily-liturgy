@@ -3,9 +3,10 @@ import { ScrollView, StyleSheet, TouchableOpacity, Text, View } from 'react-nati
 import { useNavigation } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import PrayerLine from '../components/PrayerLine';
-import SaoMiguel from '../components/ChapletsDetailScreens/SaoMiguel';
-import ProvidenciaSantissima from '../components/ChapletsDetailScreens/ProvidenciaSantissima';
-import Salmo90 from '../components/ChapletsDetailScreens/Salmo90';
+import TercoProvidencia from '../components/ChapletsDetailScreens/TercoProvidencia';
+import TercoMariano from '../components/ChapletsDetailScreens/TercoMariano';
+import TercoSaoJose from '../components/ChapletsDetailScreens/TercoSaoJose';
+import EmBreve from '../components/ChapletsDetailScreens/EmBreve';
 
 
 const Stack = createStackNavigator();
@@ -25,37 +26,38 @@ const PrayersComponent = () => {
         {() => (
           <ScrollView >
             <View style={styles}>
-              <TouchableOpacity onPress={() => handlePrayerClick('SaoMiguel')} style={[styles.container]} activeOpacity={0.65}>
+              <TouchableOpacity onPress={() => handlePrayerClick('TercoProvidencia')} style={[styles.container]} activeOpacity={0.65}>
                 <Text>Terço da Providência Santíssima</Text>
               </TouchableOpacity>
 
-              <TouchableOpacity onPress={() => handlePrayerClick('ProvidenciaSantissima')} style={[styles.container]} activeOpacity={0.65}>
-                <Text>Oração da Providência Santíssima</Text>
+              <TouchableOpacity onPress={() => handlePrayerClick('TercoMariano')} style={[styles.container]} activeOpacity={0.65}>
+                <Text>Terço Mariano / Rosário</Text>
               </TouchableOpacity>
 
-              <TouchableOpacity onPress={() => handlePrayerClick('Salmo90')} style={[styles.container]} activeOpacity={0.65}>
-                <Text>Salmo 90</Text>
+              <TouchableOpacity onPress={() => handlePrayerClick('TercoSaoJose')} style={[styles.container]} activeOpacity={0.65}>
+                <Text>Terço de São José</Text>
               </TouchableOpacity>
 
-              <TouchableOpacity onPress={() => handlePrayerClick('SaoMiguel')} style={[styles.container]} activeOpacity={0.65}>
-                <Text>Oração a São Miguel</Text>
+              <TouchableOpacity onPress={() => handlePrayerClick('EmBreve')} style={[styles.container]} activeOpacity={0.65}>
+                <Text>Em breve</Text>
               </TouchableOpacity>
 
-              <TouchableOpacity onPress={() => handlePrayerClick('ProvidenciaSantissima')} style={[styles.container]} activeOpacity={0.65}>
-                <Text>Oração da Providência Santíssima</Text>
+              <TouchableOpacity onPress={() => handlePrayerClick('EmBreve')} style={[styles.container]} activeOpacity={0.65}>
+                <Text>Em breve</Text>
               </TouchableOpacity>
 
-              <TouchableOpacity onPress={() => handlePrayerClick('Salmo90')} style={[styles.container]} activeOpacity={0.65}>
-                <Text>Salmo 90</Text>
+              <TouchableOpacity onPress={() => handlePrayerClick('EmBreve')} style={[styles.container]} activeOpacity={0.65}>
+                <Text>Em breve</Text>
               </TouchableOpacity>
 
             </View>
           </ScrollView>
         )}
       </Stack.Screen>
-      <Stack.Screen name="SaoMiguel" component={SaoMiguel} />
-      <Stack.Screen name="ProvidenciaSantissima" component={ProvidenciaSantissima} />
-      <Stack.Screen name="Salmo90" component={Salmo90} />
+      <Stack.Screen name="TercoProvidencia" component={TercoProvidencia} />
+      <Stack.Screen name="TercoMariano" component={TercoMariano} />
+      <Stack.Screen name="TercoSaoJose" component={TercoSaoJose} />
+      <Stack.Screen name="EmBreve" component={EmBreve} />
       {/* Add screens for other prayer details */}
     </Stack.Navigator>
   );

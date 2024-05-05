@@ -6,6 +6,7 @@ import PrayerLine from '../components/PrayerLine';
 import SaoMiguel from '../components/PrayerDetailScreens/SaoMiguel';
 import ProvidenciaSantissima from '../components/PrayerDetailScreens/ProvidenciaSantissima';
 import Salmo90 from '../components/PrayerDetailScreens/Salmo90';
+import EmBreve from '../components/PrayerDetailScreens/EmBreve';
 
 
 const Stack = createStackNavigator();
@@ -37,16 +38,16 @@ const PrayersComponent = () => {
                 <Text>Salmo 90</Text>
               </TouchableOpacity>
 
-              <TouchableOpacity onPress={() => handlePrayerClick('SaoMiguel')} style={[styles.container]} activeOpacity={0.65}>
-                <Text>Oração a São Miguel</Text>
+              <TouchableOpacity onPress={() => handlePrayerClick('EmBreve')} style={[styles.container]} activeOpacity={0.65}>
+                <Text>EmBreve</Text>
               </TouchableOpacity>
 
-              <TouchableOpacity onPress={() => handlePrayerClick('ProvidenciaSantissima')} style={[styles.container]} activeOpacity={0.65}>
-                <Text>Oração da Providência Santíssima</Text>
+              <TouchableOpacity onPress={() => handlePrayerClick('EmBreve')} style={[styles.container]} activeOpacity={0.65}>
+                <Text>EmBreve</Text>
               </TouchableOpacity>
 
-              <TouchableOpacity onPress={() => handlePrayerClick('Salmo90')} style={[styles.container]} activeOpacity={0.65}>
-                <Text>Salmo 90</Text>
+              <TouchableOpacity onPress={() => handlePrayerClick('EmBreve')} style={[styles.container]} activeOpacity={0.65}>
+                <Text>EmBreve</Text>
               </TouchableOpacity>
 
             </View>
@@ -56,6 +57,7 @@ const PrayersComponent = () => {
       <Stack.Screen name="SaoMiguel" component={SaoMiguel} />
       <Stack.Screen name="ProvidenciaSantissima" component={ProvidenciaSantissima} />
       <Stack.Screen name="Salmo90" component={Salmo90} />
+      <Stack.Screen name="EmBreve" component={EmBreve} />
       {/* Add screens for other prayer details */}
     </Stack.Navigator>
   );
