@@ -1,42 +1,42 @@
-import { View, Text, StyleSheet, ActivityIndicator, ScrollView } from 'react-native';
 import React, { useEffect, useState } from 'react';
-import fetchData from '../../services/api';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Linking } from 'react-native';
+
+const playlists = [
+  {
+    title: 'aaaaa',
+    url: 'https://youtube.com/playlist?list=PL1x2NrnY2NiiNqXUCl0SVusHQkhuKW6JG&feature=shared',
+  },
+  {
+    title: 'aaaaa',
+    url: 'https://youtube.com/playlist?list=PL1x2NrnY2NiiNqXUCl0SVusHQkhuKW6JG&feature=shared',
+  },
+  {
+    title: 'aaaaa',
+    url: 'https://youtube.com/playlist?list=PL1x2NrnY2NiiNqXUCl0SVusHQkhuKW6JG&feature=shared',
+  },
+  // Add more playlists here
+];
 
 const SecondRoute = () => {
   const [data, setData] = useState(null);
 
-  useEffect(() => {
-    const fetchDataAndUse = async () => {
-      try {
-        const fetchedData = await fetchData();
+  const handlePress = (url) => {
+    Linking.openURL(url);
+  };
 
-        setData(fetchedData);
-      } catch (error) {
-        console.log('Data not found or an error occurred.');
-      }
-    };
-
-    fetchDataAndUse();
-  }, []);
   return (
-    <View>
-      {data ? (
-        <View style={[styles.container]}>
-          <ScrollView>
-            <Text style={[styles.text]} >{data.data}</Text>
-            <Text style={[styles.text]} >{data.salmo.referencia}</Text>
-            <Text style={[styles.text]} >{data.salmo.refrao}</Text>
-            <Text style={[styles.text]} >{data.salmo.texto}</Text>
-          </ScrollView>
-
-        </View>
-      ) : (
-        <>
-          <Text>Loading data...</Text>
-          <ActivityIndicator size="large" color="blue" />
-
-        </>
-      )}
+    <View style={styles.container}>
+      <ScrollView>
+        {playlists.map((playlist, index) => (
+          <TouchableOpacity
+            key={index}
+            style={styles.playlistContainer}
+            onPress={() => handlePress(playlist.url)}
+          >
+            <Text style={styles.playlistTitle}>{playlist.title}</Text>
+          </TouchableOpacity>
+        ))}
+      </ScrollView>
     </View>
   );
 };
@@ -45,16 +45,18 @@ const styles = StyleSheet.create({
   container: {
     padding: 15,
   },
-  scene: {
-    flex: 1,
-    textAlign: 'center'
+  playlistContainer: {
+    marginBottom: 20,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    padding: 10,
+    borderRadius: 5,
   },
-  text: {
+  playlistTitle: {
     fontSize: 20,
-    textAlign: 'justify',
-    marginBottom: 20
-
-  }
+    color: 'blue',
+    textDecorationLine: 'underline',
+  },
 });
 
 export default SecondRoute;

@@ -21,7 +21,7 @@ const PrayersComponent = () => {
   };
 
   return (
-    <Stack.Navigator initialRouteName="PrayersList" headerMode="none">
+    <Stack.Navigator initialRouteName="PrayersList" headerShown="false">
       <Stack.Screen name="PrayersList">
         {() => (
           <ScrollView >
@@ -70,18 +70,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 10,
-    ...Platform.select({
-      ios: {
-        shadowColor: 'rgba(0, 0, 0, 0.2)',
-        shadowOffset: { width: 0, height: 4 },
-        shadowOpacity: 0.5,
-        shadowRadius: 6,
-      },
-      android: {
-        elevation: 4, // On Android, use elevation for shadow
-      },
-    }),
+    marginBottom: 10
   },
 
 });

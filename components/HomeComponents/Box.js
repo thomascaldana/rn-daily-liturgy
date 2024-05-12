@@ -10,7 +10,7 @@ export default function Box ({ children, style, onPress }) {
   }
 
   const textResponsiveStyles = {
-    fontSize: (279 < windowHeight && windowHeight < 329) ? 16 : 24
+    fontSize: (279 < windowHeight && windowHeight < 329) ? 16 : 20
   }
 
   return (

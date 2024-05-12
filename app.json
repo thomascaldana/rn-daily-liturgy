@@ -1,13 +1,13 @@
 {
   "expo": {
-    "name": "rn-daily-liturgy",
-    "slug": "rn-daily-liturgy",
+    "name": "Caminho de Fé",
+    "slug": "Caminho de Fé",
     "version": "1.0.0",
     "orientation": "default",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/icon_hands",
       "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
@@ -19,12 +19,18 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/icon_hands.jpg",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.thomascaldana.rndailyliturgy"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "b0e43f26-7a7d-42c5-ac47-17ef8c5181e2"
+      }
     }
   }
 }

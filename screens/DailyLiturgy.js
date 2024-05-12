@@ -3,26 +3,22 @@ import { View, Dimensions, StatusBar } from 'react-native';
 import { TabView, TabBar } from 'react-native-tab-view';
 import FirstRoute from '../components/DailyLiturgyComponents/FirstRoute';
 import SecondRoute from '../components/DailyLiturgyComponents/SecondRoute';
-import ThirdRoute from '../components/DailyLiturgyComponents/ThirdRoute';
 
 class TabViewClass extends React.Component {
   state = {
     index: 0,
     routes: [
-      { key: 'leitura', title: 'Leituras' },
-      { key: 'salmos', title: 'Salmos' },
-      { key: 'evangelho', title: 'Evangelho' },
+      { key: 'playlists', title: 'Playlists' },
+      { key: 'videos', title: 'Videos' }
     ],
   };
 
   renderScene = ({ route }) => {
     switch (route.key) {
-      case 'leitura':
+      case 'playlists':
         return <FirstRoute />;
-      case 'salmos':
+      case 'videos':
         return <SecondRoute />;
-      case 'evangelho':
-        return <ThirdRoute />;
       default:
         return null;
     }

@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native'
 
 import DailyLiturgy from './screens/DailyLiturgy';
+import Helpus from './screens/Helpus';
 import Home from './screens/Home';
 import PrayersComponent from './screens/Prayers';
 import Chaplets from './screens/Chaplets'
@@ -15,16 +16,17 @@ export default function App () {
   const Stack = createNativeStackNavigator();
   const Stack2 = createNativeStackNavigator();
   const Stack3 = createNativeStackNavigator();
+  const Stack4 = createNativeStackNavigator();
 
   return (
     <SafeAreaProvider style={styles.container}>
       <NavigationContainer>
         <Stack.Navigator initialRouteName='Home'>
           <Stack.Screen
-            name='LITURGIA DIÁRIA'
+            name='CAMINHO DE FÉ'
             component={Home}
             options={{
-              title: 'LITURGIA DIÁRIA',
+              title: 'CAMINHO DE FÉ',
               headerStyle: {
                 backgroundColor: '#a2d2ff',
                 height: 30,
@@ -35,7 +37,7 @@ export default function App () {
               },
             }}
           />
-          <Stack.Screen name='Liturgia Diária' component={DailyLiturgy} />
+          <Stack.Screen name='Pregações' component={DailyLiturgy} />
 
 
           <Stack2.Screen
@@ -71,7 +73,24 @@ export default function App () {
               },
             }}
           />
-          <Stack3.Screen name='tercos' component={Chaplets} />
+          <Stack3.Screen name='tercos' component={Helpus} />
+
+          <Stack4.Screen
+            name='Helpus'
+            component={Helpus}
+            options={{
+              title: 'Terços 🙏🏼',
+              headerStyle: {
+                backgroundColor: '#a2d2ff',
+                height: 30,
+              },
+              headerTintColor: '#000',
+              headerTitleStyle: {
+                fontWeight: 'bold'
+              },
+            }}
+          />
+
 
         </Stack.Navigator>
 

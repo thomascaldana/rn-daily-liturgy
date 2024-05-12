@@ -18,9 +18,9 @@ export default function Home ({ navigation }) {
   return (
     <View style={[styles.container, containerStyle]}>
       <View style={[styles.containerItems, containerItemsStyle]}>
-        <Box style={[{ backgroundColor: '#80ed99' }]} onPress={() => navigation.push('Liturgia Diária')}>Liturgia Diária</Box>
+        <Box style={[{ backgroundColor: '#80ed99' }]} onPress={() => navigation.push('Pregações')}>Pregações</Box>
         <Box style={{ backgroundColor: '#bde0fe' }} onPress={() => navigation.push('Chaplets')}>Terços</Box>
-        <Box style={{ backgroundColor: '#a2d2ff' }}>Nos ajude</Box>
+        <Box style={{ backgroundColor: '#a2d2ff' }} onPress={() => navigation.push('helpus')} >Nos ajude</Box>
       </View>
 
       <View style={[styles.containerItems, containerItemsStyle]}>

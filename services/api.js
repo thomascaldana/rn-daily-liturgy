@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Define the API URL
-const apiUrl = 'https://liturgia.up.railway.app';
+const apiUrl = 'https://liturgiadiaria.site/';
 
 // Create a function to fetch the data
 const fetchData = async () => {
