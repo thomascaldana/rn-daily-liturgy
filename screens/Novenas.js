@@ -8,7 +8,6 @@ import TercoMariano from '../components/ChapletsDetailScreens/TercoMariano';
 import TercoSaoJose from '../components/ChapletsDetailScreens/TercoSaoJose';
 import EmBreve from '../components/ChapletsDetailScreens/EmBreve';
 
-
 const Stack = createStackNavigator();
 
 const PrayersComponent = () => {
@@ -21,8 +20,8 @@ const PrayersComponent = () => {
   };
 
   return (
-    <Stack.Navigator initialRouteName="PrayersList" screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="PrayersList">
+    <Stack.Navigator initialRouteName="Novenas" screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="Novenas">
         {() => (
           <ScrollView >
             <View style={styles.container}>
@@ -36,14 +35,6 @@ const PrayersComponent = () => {
 
               <TouchableOpacity onPress={() => handlePrayerClick('TercoSaoJose')} style={styles.button} activeOpacity={0.65}>
                 <Text>Terço de São José</Text>
-              </TouchableOpacity>
-
-              <TouchableOpacity onPress={() => handlePrayerClick('EmBreve')} style={styles.button} activeOpacity={0.65}>
-                <Text>Em breve</Text>
-              </TouchableOpacity>
-
-              <TouchableOpacity onPress={() => handlePrayerClick('EmBreve')} style={styles.button} activeOpacity={0.65}>
-                <Text>Em breve</Text>
               </TouchableOpacity>
 
               <TouchableOpacity onPress={() => handlePrayerClick('EmBreve')} style={styles.button} activeOpacity={0.65}>

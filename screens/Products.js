@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { View, ActivityIndicator, StyleSheet } from 'react-native';
-import { WebView as RNWebView } from 'react-native-webview'; // Renomeie o WebView aqui
+import { WebView as RNWebView } from 'react-native-webview';
 
-const Helpus = () => {
+const Products = () => {
   const [loading, setLoading] = useState(true);
 
   const renderLoadingView = () => (
@@ -14,7 +14,7 @@ const Helpus = () => {
   return (
     <View style={{ flex: 1 }}>
       <RNWebView // Use o novo nome aqui
-        source={{ uri: 'https://secure.cancaonova.com/da/' }}
+        source={{ uri: 'https://loja.cancaonova.com/' }}
         style={{ flex: 1 }}
         onLoadStart={() => setLoading(true)}
         onLoad={() => setLoading(false)}
@@ -37,4 +37,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Helpus;
+export default Products;

@@ -6,6 +6,8 @@ import { NavigationContainer } from '@react-navigation/native'
 
 import DailyLiturgy from './screens/DailyLiturgy';
 import Helpus from './screens/Helpus';
+import Products from './screens/Products';
+import Novenas from './screens/Novenas';
 import Home from './screens/Home';
 import PrayersComponent from './screens/Prayers';
 import Chaplets from './screens/Chaplets'
@@ -17,6 +19,8 @@ export default function App () {
   const Stack2 = createNativeStackNavigator();
   const Stack3 = createNativeStackNavigator();
   const Stack4 = createNativeStackNavigator();
+  const Stack5 = createNativeStackNavigator();
+  const Stack6 = createNativeStackNavigator();
 
   return (
     <SafeAreaProvider style={styles.container}>
@@ -79,7 +83,37 @@ export default function App () {
             name='Helpus'
             component={Helpus}
             options={{
-              title: 'Terços 🙏🏼',
+              title: 'Nos ajude 🙏🏼',
+              headerStyle: {
+                backgroundColor: '#a2d2ff',
+                height: 30,
+              },
+              headerTintColor: '#000',
+              headerTitleStyle: {
+                fontWeight: 'bold'
+              },
+            }}
+          />
+          <Stack5.Screen
+            name='Products'
+            component={Products}
+            options={{
+              title: 'Produtos Católicos',
+              headerStyle: {
+                backgroundColor: '#a2d2ff',
+                height: 30,
+              },
+              headerTintColor: '#000',
+              headerTitleStyle: {
+                fontWeight: 'bold'
+              },
+            }}
+          />
+          <Stack5.Screen
+            name='Novenas'
+            component={Novenas}
+            options={{
+              title: 'Novenas',
               headerStyle: {
                 backgroundColor: '#a2d2ff',
                 height: 30,
