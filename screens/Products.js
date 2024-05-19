@@ -14,7 +14,7 @@ const Products = () => {
   return (
     <View style={{ flex: 1 }}>
       <RNWebView // Use o novo nome aqui
-        source={{ uri: 'https://loja.cancaonova.com/' }}
+        source={{ uri: 'https://loja.cancaonova.com/artigos-religiosos' }}
         style={{ flex: 1 }}
         onLoadStart={() => setLoading(true)}
         onLoad={() => setLoading(false)}
